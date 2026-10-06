@@ -1,0 +1,9 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: {{ app_name }}
+    restart: unless-stopped
+    ports:
+      - "{{ app_port }}:{{ container_port }}"
